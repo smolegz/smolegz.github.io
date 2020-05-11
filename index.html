@@ -10,7 +10,7 @@
    <title>Mini Game Project 2.0</title>
 </head>
 
-<body>
+<body onload='openModal()'>
 
    <h1 class='title'> HOW MANY <strong><span style='color: red'>CLICKS</span></strong> TO REMOVE THE CUBES ? <span id='counter' style='color:red'>0</span></h1>
 
@@ -20,13 +20,35 @@
       <button class='btn' id='play'><i class=" fa fa-volume-up fa-2x" aria-hidden="false"></i></button>
    </div>
 
-
+   <div class="modal" id="modal">
+      <div class='modal-header'>
+         <div class="title2">Hi There !</div>
+      </div>
+      <div class="modal-body">
+         This mini-game was created with simple Three.JS library. The cuboids are randomly oriented upon every refresh of the page. Click the cuboids to push them around. ENJOY !
+         <Br><button class='play-button'>PLAY</button>
+      </div>
+   </div>
+   <div id='overlay'></div>
 
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
 
    <script>
+      const modal = document.querySelector('.modal');
+      const overlay = document.getElementById('overlay');
+
+      function openModal() {
+         modal.classList.add('active')
+         overlay.classList.add('active')
+      }
+
+      document.querySelector('.play-button').addEventListener('click', function(e) {
+         modal.classList.remove('active')
+         overlay.classList.remove('active')
+      })
+
       var myMusic = document.querySelector('#music')
 
       function startPlayback() {
