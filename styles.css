@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 @keyframes backgroundGradient {
   0% {background-image: linear-gradient(45.34deg, #4F4F4F 5.66%, #ECD3A1 94.35%)}
@@ -12,8 +13,9 @@
 body {
    margin: 0;
    height: 100%;
-   animation: backgroundGradient 25s ease 0s infinite;
+   animation: backgroundGradient 30s ease 0s infinite;
    overflow: hidden;
+   z-index: 5;
 }
 
 canvas {
@@ -88,4 +90,85 @@ h1{
    border: 2px solid white;
    padding:5px;
    border-radius: 50%;
+}
+
+.modal {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%) scale(0);
+   transition: 200ms ease-in-out;
+   border: 1px solid black;
+   border-radius: 10px;
+   z-index: 10;
+   background-color: white;
+   width: 600px;
+   max-width: 80%;
+}
+
+.modal.active{
+   transform: translate(-50%,-50%) scale(1);
+}
+
+.modal-header {
+   padding: 10px 15px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-bottom: 1px solid #303231;
+}
+
+.modal-header .title2 {
+   font-size: 1.4rem;
+   font-weight: bold;
+   font-family: 'Oswald', sans-serif;
+   margin:auto;
+   letter-spacing: 1.5px;
+}
+
+.modal-body .play-button{
+   cursor: pointer;
+   border: 1.5px solid black;
+   border-radius: 20px;
+   outline: none;
+   background: none;
+   font-size: 1.25rem;
+   font-family: 'Oswald', sans-serif;
+   padding: 5px;
+   padding-left: 20px;
+   padding-right: 20px;
+   margin-top: 20px;
+
+}
+
+.modal-body {
+   padding: 10px 15px;
+   font-family: 'Oswald', sans-serif;
+   text-align: center;
+   letter-spacing: 1px;
+
+}
+
+.play-button:hover {
+   background-color: #2BE71B;
+   color: white;
+   border: 1.5px solid #2BE71B;
+}
+
+#overlay {
+   position: fixed;
+   opacity: 0 ;
+   transition: 200ms ease-in-out;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background-color: rgba(0,0,0,0.8);
+   z-index: 7;
+   pointer-events: none;
+}
+
+#overlay.active {
+   opacity: 1;
+   pointer-events: all;
 }
