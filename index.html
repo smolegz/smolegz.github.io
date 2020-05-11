@@ -14,7 +14,7 @@
 
    <h1 class='title'> HOW MANY <strong><span style='color: red'>CLICKS</span></strong> TO REMOVE THE CUBES ? <span id='counter' style='color:red'>0</span></h1>
 
-   <audio id='music' src='bgm.mp3'></audio>
+   <audio id='music' src='song.mp3'></audio>
    <div class='container'>
       <button class='btn' id='mute'><i class="fa fa-volume-off fa-2x" aria-hidden="true"></i></button>
       <button class='btn' id='play'><i class=" fa fa-volume-up fa-2x" aria-hidden="false"></i></button>
@@ -40,7 +40,7 @@
          console.log('Use the Play button instead.');
          console.log(error);
          document.getElementById('play').addEventListener('click', startPlayback);
-         window.addEventListener('click', startPlayback);
+         // window.addEventListener('click', startPlayback);
       })
 
       var MuteNode = document.getElementById('mute')
