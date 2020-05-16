@@ -98,7 +98,6 @@
 
 
       var scene = new THREE.Scene();
-      // POV,ASPECT RATIO, ETC...
       var camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 1000)
       camera.position.z = 5;
 
@@ -199,7 +198,7 @@
             return Math.random() * (max - min) + min;
          }
          var positionValue = getRandomArbitrary(-15, 15)
-         var positionValue2 = getRandomArbitrary(-12, 12)
+         var positionValue2 = getRandomArbitrary(-11, 11)
          var intersects = raycaster.intersectObjects(scene.children, true);
          for (var i = 0; i < intersects.length; i++) {
 
